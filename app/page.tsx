@@ -153,7 +153,7 @@ export default function HomePage() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#09090b] text-[#fafafa] transition-colors">
+    <div className="min-h-screen flex flex-col bg-slate-50 dark:bg-[#09090b] text-slate-900 dark:text-[#fafafa] transition-colors">
       <Header
         onOpenHistory={() => {
           const el = document.getElementById('saved-history');
@@ -173,13 +173,13 @@ export default function HomePage() {
 
         {/* Navigation Quick Filter Tabs */}
         <div className="no-print max-w-4xl mx-auto px-4 mb-6">
-          <div className="flex items-center justify-center p-1.5 bg-[#18181b] border border-zinc-800 rounded-2xl w-full sm:w-auto mx-auto max-w-md">
+          <div className="flex items-center justify-center p-1.5 bg-slate-200/80 dark:bg-[#18181b] border border-slate-300 dark:border-zinc-800 rounded-2xl w-full sm:w-auto mx-auto max-w-md shadow-xs">
             <button
               onClick={() => setActiveTab('calculator')}
               className={`flex-1 py-2 px-3 rounded-xl text-xs sm:text-sm font-bold transition-all ${
                 activeTab === 'calculator'
-                  ? 'bg-zinc-900 text-indigo-400 border border-zinc-700/80 shadow-xs'
-                  : 'text-zinc-400 hover:text-white'
+                  ? 'bg-white dark:bg-zinc-900 text-indigo-600 dark:text-indigo-400 border border-slate-300 dark:border-zinc-700/80 shadow-xs'
+                  : 'text-slate-600 dark:text-zinc-400 hover:text-slate-900 dark:hover:text-white'
               }`}
             >
               Exact Age
@@ -188,8 +188,8 @@ export default function HomePage() {
               onClick={() => setActiveTab('diff')}
               className={`flex-1 py-2 px-3 rounded-xl text-xs sm:text-sm font-bold transition-all ${
                 activeTab === 'diff'
-                  ? 'bg-zinc-900 text-indigo-400 border border-zinc-700/80 shadow-xs'
-                  : 'text-zinc-400 hover:text-white'
+                  ? 'bg-white dark:bg-zinc-900 text-indigo-600 dark:text-indigo-400 border border-slate-300 dark:border-zinc-700/80 shadow-xs'
+                  : 'text-slate-600 dark:text-zinc-400 hover:text-slate-900 dark:hover:text-white'
               }`}
             >
               Date Difference
@@ -198,8 +198,8 @@ export default function HomePage() {
               onClick={() => setActiveTab('birthday')}
               className={`flex-1 py-2 px-3 rounded-xl text-xs sm:text-sm font-bold transition-all ${
                 activeTab === 'birthday'
-                  ? 'bg-zinc-900 text-indigo-400 border border-zinc-700/80 shadow-xs'
-                  : 'text-zinc-400 hover:text-white'
+                  ? 'bg-white dark:bg-zinc-900 text-indigo-600 dark:text-indigo-400 border border-slate-300 dark:border-zinc-700/80 shadow-xs'
+                  : 'text-slate-600 dark:text-zinc-400 hover:text-slate-900 dark:hover:text-white'
               }`}
             >
               Birthday Hub

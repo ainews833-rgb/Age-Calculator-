@@ -101,26 +101,26 @@ export function AgeUnitsTable({ result }: AgeUnitsTableProps) {
   ];
 
   return (
-    <div className="bg-[#18181b] rounded-2xl shadow-2xl border border-zinc-800/90 p-5 sm:p-8 max-w-4xl mx-auto mt-8 transition-all">
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-5 border-b border-zinc-800">
+    <div className="bg-white dark:bg-[#18181b] rounded-2xl shadow-xl shadow-slate-200/50 dark:shadow-2xl border border-slate-200/90 dark:border-zinc-800/90 p-5 sm:p-8 max-w-4xl mx-auto mt-8 transition-all">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-5 border-b border-slate-200 dark:border-zinc-800">
         <div>
-          <h2 className="text-xl sm:text-2xl font-bold text-white flex items-center gap-2">
-            <Layers className="w-5 h-5 text-indigo-400" />
+          <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
+            <Layers className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
             Your Age in Different Units
           </h2>
-          <p className="text-xs sm:text-sm text-zinc-400 mt-0.5">
+          <p className="text-xs sm:text-sm text-slate-500 dark:text-zinc-400 mt-0.5">
             Compare your chronological age across exact calendar and planetary units
           </p>
         </div>
 
         {/* Tab switcher */}
-        <div className="flex items-center p-1 bg-zinc-900 border border-zinc-800 rounded-xl">
+        <div className="flex items-center p-1 bg-slate-100 dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 rounded-xl">
           <button
             onClick={() => setActiveTab('standard')}
             className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-colors ${
               activeTab === 'standard'
-                ? 'bg-[#18181b] text-indigo-400 border border-zinc-700 shadow-sm'
-                : 'text-zinc-400 hover:text-white'
+                ? 'bg-white dark:bg-[#18181b] text-indigo-600 dark:text-indigo-400 border border-slate-200 dark:border-zinc-700 shadow-xs'
+                : 'text-slate-600 dark:text-zinc-400 hover:text-slate-900 dark:hover:text-white'
             }`}
           >
             Standard Units
@@ -129,8 +129,8 @@ export function AgeUnitsTable({ result }: AgeUnitsTableProps) {
             onClick={() => setActiveTab('comparative')}
             className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-colors ${
               activeTab === 'comparative'
-                ? 'bg-[#18181b] text-indigo-400 border border-zinc-700 shadow-sm'
-                : 'text-zinc-400 hover:text-white'
+                ? 'bg-white dark:bg-[#18181b] text-indigo-600 dark:text-indigo-400 border border-slate-200 dark:border-zinc-700 shadow-xs'
+                : 'text-slate-600 dark:text-zinc-400 hover:text-slate-900 dark:hover:text-white'
             }`}
           >
             Planetary & Animal
@@ -143,27 +143,27 @@ export function AgeUnitsTable({ result }: AgeUnitsTableProps) {
         {(activeTab === 'standard' ? standardUnits : comparativeUnits).map((item) => (
           <div
             key={item.unit}
-            className="p-4 rounded-xl bg-zinc-900/60 border border-zinc-800 hover:border-indigo-500/50 transition-all flex flex-col justify-between"
+            className="p-4 rounded-xl bg-slate-50 dark:bg-zinc-900/60 border border-slate-200 dark:border-zinc-800 hover:border-indigo-400/50 dark:hover:border-indigo-500/50 transition-all flex flex-col justify-between"
           >
             <div>
               <div className="flex items-center justify-between gap-2 mb-1.5">
-                <span className="text-xs font-bold text-zinc-400 uppercase tracking-wider">
+                <span className="text-xs font-bold text-slate-500 dark:text-zinc-400 uppercase tracking-wider">
                   {item.unit}
                 </span>
-                <span className="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-zinc-800 border border-zinc-700 text-zinc-300">
+                <span className="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-white dark:bg-zinc-800 border border-slate-200 dark:border-zinc-700 text-slate-700 dark:text-zinc-300">
                   {item.badge}
                 </span>
               </div>
-              <span className="block text-xl font-extrabold text-white">
+              <span className="block text-xl font-extrabold text-slate-900 dark:text-white">
                 {item.value}
               </span>
-              <p className="text-xs text-zinc-400 mt-1">
+              <p className="text-xs text-slate-600 dark:text-zinc-400 mt-1">
                 {item.breakdown}
               </p>
             </div>
 
-            <div className="mt-3 pt-2.5 border-t border-zinc-800 flex items-center gap-1.5 text-[11px] text-zinc-500">
-              <HelpCircle className="w-3.5 h-3.5 text-zinc-500 flex-shrink-0" />
+            <div className="mt-3 pt-2.5 border-t border-slate-200 dark:border-zinc-800 flex items-center gap-1.5 text-[11px] text-slate-400 dark:text-zinc-500">
+              <HelpCircle className="w-3.5 h-3.5 text-slate-400 dark:text-zinc-500 flex-shrink-0" />
               <span className="truncate" title={item.tooltip}>
                 {item.tooltip}
               </span>

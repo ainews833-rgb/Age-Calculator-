@@ -104,15 +104,15 @@ export function DateDifferenceCalc() {
   return (
     <div
       id="date-difference"
-      className="bg-[#18181b] rounded-2xl shadow-2xl border border-zinc-800/90 p-5 sm:p-8 max-w-4xl mx-auto mt-8 transition-all"
+      className="bg-white dark:bg-[#18181b] rounded-2xl shadow-xl shadow-slate-200/50 dark:shadow-2xl border border-slate-200/90 dark:border-zinc-800/90 p-5 sm:p-8 max-w-4xl mx-auto mt-8 transition-all"
     >
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-5 border-b border-zinc-800">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-5 border-b border-slate-200 dark:border-zinc-800">
         <div>
-          <h2 className="text-xl sm:text-2xl font-bold text-white flex items-center gap-2">
-            <ArrowRightLeft className="w-5 h-5 text-indigo-400" />
+          <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
+            <ArrowRightLeft className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
             Date Difference Calculator
           </h2>
-          <p className="text-xs sm:text-sm text-zinc-400 mt-0.5">
+          <p className="text-xs sm:text-sm text-slate-500 dark:text-zinc-400 mt-0.5">
             Calculate the exact duration, working days, and elapsed time between any two dates
           </p>
         </div>
@@ -120,7 +120,7 @@ export function DateDifferenceCalc() {
         <button
           type="button"
           onClick={handleSwap}
-          className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-zinc-700 bg-zinc-900 text-xs font-semibold text-zinc-300 hover:bg-zinc-800 hover:text-white transition-colors self-start sm:self-auto"
+          className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-slate-300 dark:border-zinc-700 bg-slate-100 dark:bg-zinc-900 text-xs font-semibold text-slate-700 dark:text-zinc-300 hover:bg-slate-200 dark:hover:bg-zinc-800 hover:text-slate-900 dark:hover:text-white transition-colors self-start sm:self-auto"
         >
           <ArrowRightLeft className="w-3.5 h-3.5" />
           Swap Dates
@@ -130,16 +130,16 @@ export function DateDifferenceCalc() {
       {/* Inputs Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
         {/* Start Date */}
-        <div className="p-4 sm:p-5 rounded-xl bg-zinc-900/60 border border-zinc-800">
+        <div className="p-4 sm:p-5 rounded-xl bg-slate-50 dark:bg-zinc-900/60 border border-slate-200 dark:border-zinc-800">
           <div className="flex items-center justify-between mb-3">
-            <label className="block text-sm font-bold text-white">
+            <label className="block text-sm font-bold text-slate-900 dark:text-white">
               Start Date
             </label>
             <div className="flex items-center gap-1.5">
               <button
                 type="button"
                 onClick={handleSetStartToday}
-                className="text-xs px-2 py-0.5 bg-indigo-950 text-indigo-300 rounded font-medium border border-indigo-800"
+                className="text-xs px-2 py-0.5 bg-indigo-50 text-indigo-700 dark:bg-indigo-950 dark:text-indigo-300 rounded font-medium border border-indigo-200 dark:border-indigo-800"
               >
                 Today
               </button>
@@ -154,19 +154,19 @@ export function DateDifferenceCalc() {
                     setSDay(parsed.day);
                   }
                 }}
-                className="text-xs px-2 py-1 bg-zinc-900 border border-zinc-700 rounded-md text-zinc-200"
+                className="text-xs px-2 py-1 bg-white dark:bg-zinc-900 border border-slate-300 dark:border-zinc-700 rounded-md text-slate-800 dark:text-zinc-200"
               />
             </div>
           </div>
 
           <div className="grid grid-cols-3 gap-2">
             <div>
-              <label htmlFor="diff-start-month" className="block text-[11px] font-semibold text-zinc-400 mb-1">Month</label>
+              <label htmlFor="diff-start-month" className="block text-[11px] font-semibold text-slate-500 dark:text-zinc-400 mb-1">Month</label>
               <select
                 id="diff-start-month"
                 value={sMonth}
                 onChange={(e) => setSMonth(Number(e.target.value))}
-                className="w-full h-10 px-2 bg-[#09090b] border border-zinc-700 rounded-lg text-xs font-medium text-white"
+                className="w-full h-10 px-2 bg-white dark:bg-[#09090b] border border-slate-300 dark:border-zinc-700 rounded-lg text-xs font-medium text-slate-900 dark:text-white"
               >
                 {MONTH_NAMES.map((m, idx) => (
                   <option key={m} value={idx + 1}>
@@ -176,12 +176,12 @@ export function DateDifferenceCalc() {
               </select>
             </div>
             <div>
-              <label htmlFor="diff-start-day" className="block text-[11px] font-semibold text-zinc-400 mb-1">Day</label>
+              <label htmlFor="diff-start-day" className="block text-[11px] font-semibold text-slate-500 dark:text-zinc-400 mb-1">Day</label>
               <select
                 id="diff-start-day"
                 value={sDay}
                 onChange={(e) => setSDay(Number(e.target.value))}
-                className="w-full h-10 px-2 bg-[#09090b] border border-zinc-700 rounded-lg text-xs font-medium text-white"
+                className="w-full h-10 px-2 bg-white dark:bg-[#09090b] border border-slate-300 dark:border-zinc-700 rounded-lg text-xs font-medium text-slate-900 dark:text-white"
               >
                 {sDaysList.map((d) => (
                   <option key={d} value={d}>
@@ -191,12 +191,12 @@ export function DateDifferenceCalc() {
               </select>
             </div>
             <div>
-              <label htmlFor="diff-start-year" className="block text-[11px] font-semibold text-zinc-400 mb-1">Year</label>
+              <label htmlFor="diff-start-year" className="block text-[11px] font-semibold text-slate-500 dark:text-zinc-400 mb-1">Year</label>
               <select
                 id="diff-start-year"
                 value={sYear}
                 onChange={(e) => setSYear(Number(e.target.value))}
-                className="w-full h-10 px-2 bg-[#09090b] border border-zinc-700 rounded-lg text-xs font-medium text-white"
+                className="w-full h-10 px-2 bg-white dark:bg-[#09090b] border border-slate-300 dark:border-zinc-700 rounded-lg text-xs font-medium text-slate-900 dark:text-white"
               >
                 {yearsList.map((y) => (
                   <option key={y} value={y}>
@@ -209,16 +209,16 @@ export function DateDifferenceCalc() {
         </div>
 
         {/* End Date */}
-        <div className="p-4 sm:p-5 rounded-xl bg-zinc-900/60 border border-zinc-800">
+        <div className="p-4 sm:p-5 rounded-xl bg-slate-50 dark:bg-zinc-900/60 border border-slate-200 dark:border-zinc-800">
           <div className="flex items-center justify-between mb-3">
-            <label className="block text-sm font-bold text-white">
+            <label className="block text-sm font-bold text-slate-900 dark:text-white">
               End Date
             </label>
             <div className="flex items-center gap-1.5">
               <button
                 type="button"
                 onClick={handleSetEndToday}
-                className="text-xs px-2 py-0.5 bg-indigo-950 text-indigo-300 rounded font-medium border border-indigo-800"
+                className="text-xs px-2 py-0.5 bg-indigo-50 text-indigo-700 dark:bg-indigo-950 dark:text-indigo-300 rounded font-medium border border-indigo-200 dark:border-indigo-800"
               >
                 Today
               </button>
@@ -233,19 +233,19 @@ export function DateDifferenceCalc() {
                     setEDay(parsed.day);
                   }
                 }}
-                className="text-xs px-2 py-1 bg-zinc-900 border border-zinc-700 rounded-md text-zinc-200"
+                className="text-xs px-2 py-1 bg-white dark:bg-zinc-900 border border-slate-300 dark:border-zinc-700 rounded-md text-slate-800 dark:text-zinc-200"
               />
             </div>
           </div>
 
           <div className="grid grid-cols-3 gap-2">
             <div>
-              <label htmlFor="diff-end-month" className="block text-[11px] font-semibold text-zinc-400 mb-1">Month</label>
+              <label htmlFor="diff-end-month" className="block text-[11px] font-semibold text-slate-500 dark:text-zinc-400 mb-1">Month</label>
               <select
                 id="diff-end-month"
                 value={eMonth}
                 onChange={(e) => setEMonth(Number(e.target.value))}
-                className="w-full h-10 px-2 bg-[#09090b] border border-zinc-700 rounded-lg text-xs font-medium text-white"
+                className="w-full h-10 px-2 bg-white dark:bg-[#09090b] border border-slate-300 dark:border-zinc-700 rounded-lg text-xs font-medium text-slate-900 dark:text-white"
               >
                 {MONTH_NAMES.map((m, idx) => (
                   <option key={m} value={idx + 1}>
@@ -255,12 +255,12 @@ export function DateDifferenceCalc() {
               </select>
             </div>
             <div>
-              <label htmlFor="diff-end-day" className="block text-[11px] font-semibold text-zinc-400 mb-1">Day</label>
+              <label htmlFor="diff-end-day" className="block text-[11px] font-semibold text-slate-500 dark:text-zinc-400 mb-1">Day</label>
               <select
                 id="diff-end-day"
                 value={eDay}
                 onChange={(e) => setEDay(Number(e.target.value))}
-                className="w-full h-10 px-2 bg-[#09090b] border border-zinc-700 rounded-lg text-xs font-medium text-white"
+                className="w-full h-10 px-2 bg-white dark:bg-[#09090b] border border-slate-300 dark:border-zinc-700 rounded-lg text-xs font-medium text-slate-900 dark:text-white"
               >
                 {eDaysList.map((d) => (
                   <option key={d} value={d}>
@@ -270,12 +270,12 @@ export function DateDifferenceCalc() {
               </select>
             </div>
             <div>
-              <label htmlFor="diff-end-year" className="block text-[11px] font-semibold text-zinc-400 mb-1">Year</label>
+              <label htmlFor="diff-end-year" className="block text-[11px] font-semibold text-slate-500 dark:text-zinc-400 mb-1">Year</label>
               <select
                 id="diff-end-year"
                 value={eYear}
                 onChange={(e) => setEYear(Number(e.target.value))}
-                className="w-full h-10 px-2 bg-[#09090b] border border-zinc-700 rounded-lg text-xs font-medium text-white"
+                className="w-full h-10 px-2 bg-white dark:bg-[#09090b] border border-slate-300 dark:border-zinc-700 rounded-lg text-xs font-medium text-slate-900 dark:text-white"
               >
                 {yearsList.map((y) => (
                   <option key={y} value={y}>
@@ -302,55 +302,55 @@ export function DateDifferenceCalc() {
 
       {/* Results View */}
       {result && (
-        <div className="mt-6 pt-6 border-t border-zinc-800 animate-fadeIn">
+        <div className="mt-6 pt-6 border-t border-slate-200 dark:border-zinc-800 animate-fadeIn">
           {/* Main Difference Banner */}
-          <div className="p-5 rounded-2xl bg-indigo-950/40 border border-indigo-900/60 text-center">
-            <span className="text-xs font-bold text-indigo-400 uppercase tracking-wider">
+          <div className="p-5 rounded-2xl bg-indigo-50 dark:bg-indigo-950/40 border border-indigo-200 dark:border-indigo-900/60 text-center">
+            <span className="text-xs font-bold text-indigo-700 dark:text-indigo-400 uppercase tracking-wider">
               Exact Calendar Duration
             </span>
-            <h3 className="text-2xl sm:text-4xl font-extrabold text-white mt-1">
+            <h3 className="text-2xl sm:text-4xl font-extrabold text-slate-900 dark:text-white mt-1">
               {result.years > 0 && `${result.years} Years, `}
               {result.months} Months, {result.days} Days
             </h3>
-            <p className="text-xs text-zinc-400 mt-1">
+            <p className="text-xs text-slate-500 dark:text-zinc-400 mt-1">
               From {formatMediumDate(result.startDate)} to {formatMediumDate(result.endDate)}
             </p>
           </div>
 
           {/* Breakdown Stats */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-4">
-            <div className="p-3.5 rounded-xl bg-[#09090b] border border-zinc-800 text-center">
-              <span className="block text-xl font-bold text-white">
+            <div className="p-3.5 rounded-xl bg-slate-50 dark:bg-[#09090b] border border-slate-200 dark:border-zinc-800 text-center shadow-xs">
+              <span className="block text-xl font-bold text-slate-900 dark:text-white">
                 {formatNumber(result.totalDays)}
               </span>
-              <span className="text-xs font-semibold text-zinc-400">
+              <span className="text-xs font-semibold text-slate-500 dark:text-zinc-400">
                 Total Days
               </span>
             </div>
 
-            <div className="p-3.5 rounded-xl bg-[#09090b] border border-zinc-800 text-center">
-              <span className="block text-xl font-bold text-white">
+            <div className="p-3.5 rounded-xl bg-slate-50 dark:bg-[#09090b] border border-slate-200 dark:border-zinc-800 text-center shadow-xs">
+              <span className="block text-xl font-bold text-slate-900 dark:text-white">
                 {formatNumber(result.totalWeeks)}
               </span>
-              <span className="text-xs font-semibold text-zinc-400">
+              <span className="text-xs font-semibold text-slate-500 dark:text-zinc-400">
                 Total Weeks
               </span>
             </div>
 
-            <div className="p-3.5 rounded-xl bg-[#09090b] border border-zinc-800 text-center">
-              <span className="block text-xl font-bold text-emerald-400">
+            <div className="p-3.5 rounded-xl bg-slate-50 dark:bg-[#09090b] border border-slate-200 dark:border-zinc-800 text-center shadow-xs">
+              <span className="block text-xl font-bold text-emerald-600 dark:text-emerald-400">
                 {formatNumber(result.weekdays)}
               </span>
-              <span className="text-xs font-semibold text-zinc-400 flex items-center justify-center gap-1">
+              <span className="text-xs font-semibold text-slate-500 dark:text-zinc-400 flex items-center justify-center gap-1">
                 <Briefcase className="w-3 h-3" /> Working Days
               </span>
             </div>
 
-            <div className="p-3.5 rounded-xl bg-[#09090b] border border-zinc-800 text-center">
-              <span className="block text-xl font-bold text-amber-400">
+            <div className="p-3.5 rounded-xl bg-slate-50 dark:bg-[#09090b] border border-slate-200 dark:border-zinc-800 text-center shadow-xs">
+              <span className="block text-xl font-bold text-amber-600 dark:text-amber-400">
                 {formatNumber(result.weekendDays)}
               </span>
-              <span className="text-xs font-semibold text-zinc-400 flex items-center justify-center gap-1">
+              <span className="text-xs font-semibold text-slate-500 dark:text-zinc-400 flex items-center justify-center gap-1">
                 <SunMedium className="w-3 h-3" /> Weekend Days
               </span>
             </div>

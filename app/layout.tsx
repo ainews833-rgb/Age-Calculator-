@@ -19,8 +19,25 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className="dark" suppressHydrationWarning>
-      <body suppressHydrationWarning className="antialiased bg-[#09090b] text-[#fafafa] selection:bg-indigo-500 selection:text-white">
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              try {
+                var stored = localStorage.getItem('age_calc_pro_theme');
+                var isDark = stored === 'dark' || (!stored && window.matchMedia('(prefers-color-scheme: dark)').matches) || (stored === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+                if (isDark) {
+                  document.documentElement.classList.add('dark');
+                } else {
+                  document.documentElement.classList.remove('dark');
+                }
+              } catch (e) {}
+            `,
+          }}
+        />
+      </head>
+      <body suppressHydrationWarning className="antialiased bg-slate-50 text-slate-900 dark:bg-[#09090b] dark:text-[#fafafa] selection:bg-indigo-500 selection:text-white transition-colors duration-200">
         <ThemeProvider>
           {children}
         </ThemeProvider>

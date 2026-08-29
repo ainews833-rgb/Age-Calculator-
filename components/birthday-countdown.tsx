@@ -73,18 +73,18 @@ export function BirthdayCountdown({ result, leapRule, onLeapRuleChange }: Birthd
   return (
     <div
       id="birthday-countdown"
-      className="bg-[#18181b] rounded-2xl shadow-2xl border border-zinc-800/90 p-5 sm:p-8 max-w-4xl mx-auto mt-8 transition-all"
+      className="bg-white dark:bg-[#18181b] rounded-2xl shadow-xl shadow-slate-200/50 dark:shadow-2xl border border-slate-200/90 dark:border-zinc-800/90 p-5 sm:p-8 max-w-4xl mx-auto mt-8 transition-all"
     >
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-5 border-b border-zinc-800">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-5 border-b border-slate-200 dark:border-zinc-800">
         <div className="flex items-center gap-3">
-          <div className="w-11 h-11 rounded-xl bg-amber-950/60 border border-amber-800/50 text-amber-400 flex items-center justify-center flex-shrink-0">
+          <div className="w-11 h-11 rounded-xl bg-amber-50 border border-amber-200 text-amber-600 dark:bg-amber-950/60 dark:border-amber-800/50 dark:text-amber-400 flex items-center justify-center flex-shrink-0">
             <Cake className="w-6 h-6" />
           </div>
           <div>
-            <h2 className="text-xl font-bold text-white">
+            <h2 className="text-xl font-bold text-slate-900 dark:text-white">
               Your Next Birthday
             </h2>
-            <p className="text-xs text-zinc-400">
+            <p className="text-xs text-slate-500 dark:text-zinc-400">
               Personal birthday countdown and age milestone prediction
             </p>
           </div>
@@ -101,8 +101,8 @@ export function BirthdayCountdown({ result, leapRule, onLeapRuleChange }: Birthd
             <PartyPopper className="w-4 h-4" /> 🎉 Happy Birthday! (Click for Confetti)
           </button>
         ) : (
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-zinc-900 border border-zinc-800 text-zinc-300 text-xs font-semibold">
-            <Calendar className="w-3.5 h-3.5 text-indigo-400" />
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 text-slate-700 dark:text-zinc-300 text-xs font-semibold">
+            <Calendar className="w-3.5 h-3.5 text-indigo-600 dark:text-indigo-400" />
             {formatMediumDate(result.nextBirthdayDate)}
           </div>
         )}
@@ -121,10 +121,10 @@ export function BirthdayCountdown({ result, leapRule, onLeapRuleChange }: Birthd
       ) : (
         <div className="mt-6">
           {/* Main Turning Announcement */}
-          <div className="p-4 sm:p-5 rounded-xl bg-indigo-950/40 border border-indigo-900/60 mb-6">
-            <p className="text-base sm:text-lg font-bold text-white">
+          <div className="p-4 sm:p-5 rounded-xl bg-indigo-50 border border-indigo-200 dark:bg-indigo-950/40 dark:border-indigo-900/60 mb-6">
+            <p className="text-base sm:text-lg font-bold text-slate-900 dark:text-white">
               You will turn{' '}
-              <span className="text-indigo-400 font-extrabold">
+              <span className="text-indigo-600 dark:text-indigo-400 font-extrabold">
                 {result.nextBirthdayAge} years old
               </span>{' '}
               on{' '}
@@ -133,9 +133,9 @@ export function BirthdayCountdown({ result, leapRule, onLeapRuleChange }: Birthd
               </span>
               .
             </p>
-            <p className="text-xs text-zinc-400 mt-1">
-              That is in exactly <strong className="text-zinc-200">{result.daysUntilNextBirthday} days</strong> (or{' '}
-              <strong className="text-zinc-200">
+            <p className="text-xs text-slate-600 dark:text-zinc-400 mt-1">
+              That is in exactly <strong className="text-slate-900 dark:text-zinc-200">{result.daysUntilNextBirthday} days</strong> (or{' '}
+              <strong className="text-slate-900 dark:text-zinc-200">
                 {result.weeksUntilNextBirthday} weeks and {result.remainingDaysAfterWeeks} days
               </strong>
               ).
@@ -144,50 +144,50 @@ export function BirthdayCountdown({ result, leapRule, onLeapRuleChange }: Birthd
 
           {/* Countdown Clock Grid */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-center">
-            <div className="p-4 rounded-xl bg-[#09090b] border border-zinc-800 shadow-xs">
-              <span className="block text-3xl sm:text-4xl font-extrabold text-white">
+            <div className="p-4 rounded-xl bg-slate-50 dark:bg-[#09090b] border border-slate-200 dark:border-zinc-800 shadow-xs">
+              <span className="block text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">
                 {timeLeft.days}
               </span>
-              <span className="text-xs font-semibold uppercase tracking-wider text-zinc-400">
+              <span className="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-zinc-400">
                 Days
               </span>
             </div>
 
-            <div className="p-4 rounded-xl bg-[#09090b] border border-zinc-800 shadow-xs">
-              <span className="block text-3xl sm:text-4xl font-extrabold text-white">
+            <div className="p-4 rounded-xl bg-slate-50 dark:bg-[#09090b] border border-slate-200 dark:border-zinc-800 shadow-xs">
+              <span className="block text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">
                 {String(timeLeft.hours).padStart(2, '0')}
               </span>
-              <span className="text-xs font-semibold uppercase tracking-wider text-zinc-400">
+              <span className="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-zinc-400">
                 Hours
               </span>
             </div>
 
-            <div className="p-4 rounded-xl bg-[#09090b] border border-zinc-800 shadow-xs">
-              <span className="block text-3xl sm:text-4xl font-extrabold text-white">
+            <div className="p-4 rounded-xl bg-slate-50 dark:bg-[#09090b] border border-slate-200 dark:border-zinc-800 shadow-xs">
+              <span className="block text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">
                 {String(timeLeft.minutes).padStart(2, '0')}
               </span>
-              <span className="text-xs font-semibold uppercase tracking-wider text-zinc-400">
+              <span className="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-zinc-400">
                 Minutes
               </span>
             </div>
 
-            <div className="p-4 rounded-xl bg-indigo-950/40 border border-indigo-800/80 shadow-xs">
-              <span className="block text-3xl sm:text-4xl font-extrabold text-indigo-400">
+            <div className="p-4 rounded-xl bg-indigo-50 border border-indigo-200 dark:bg-indigo-950/40 dark:border-indigo-800/80 shadow-xs">
+              <span className="block text-3xl sm:text-4xl font-extrabold text-indigo-600 dark:text-indigo-400">
                 {String(timeLeft.seconds).padStart(2, '0')}
               </span>
-              <span className="text-xs font-semibold uppercase tracking-wider text-indigo-300">
+              <span className="text-xs font-semibold uppercase tracking-wider text-indigo-700 dark:text-indigo-300">
                 Seconds
               </span>
             </div>
           </div>
 
           {/* Year Cycle Progress Bar */}
-          <div className="mt-6 pt-5 border-t border-zinc-800">
-            <div className="flex items-center justify-between text-xs font-semibold text-zinc-400 mb-2">
+          <div className="mt-6 pt-5 border-t border-slate-200 dark:border-zinc-800">
+            <div className="flex items-center justify-between text-xs font-semibold text-slate-500 dark:text-zinc-400 mb-2">
               <span>Current Age Cycle Progress</span>
-              <span className="text-zinc-200">{progressPercent}% completed</span>
+              <span className="text-slate-900 dark:text-zinc-200">{progressPercent}% completed</span>
             </div>
-            <div className="w-full h-3 bg-[#09090b] rounded-full overflow-hidden p-0.5 border border-zinc-800">
+            <div className="w-full h-3 bg-slate-100 dark:bg-[#09090b] rounded-full overflow-hidden p-0.5 border border-slate-200 dark:border-zinc-800">
               <div
                 className="h-full bg-gradient-to-r from-indigo-500 via-violet-500 to-amber-500 rounded-full transition-all duration-500"
                 style={{ width: `${progressPercent}%` }}
@@ -199,23 +199,23 @@ export function BirthdayCountdown({ result, leapRule, onLeapRuleChange }: Birthd
 
       {/* Leap Day Explainer if born on Feb 29 */}
       {result.isFeb29Birthday && (
-        <div className="mt-6 p-4 rounded-xl bg-amber-950/40 border border-amber-900/60 text-xs text-amber-200 flex items-start gap-3">
-          <AlertTriangle className="w-5 h-5 text-amber-400 flex-shrink-0 mt-0.5" />
+        <div className="mt-6 p-4 rounded-xl bg-amber-50 border border-amber-200 text-xs text-amber-900 dark:bg-amber-950/40 dark:border-amber-900/60 dark:text-amber-200 flex items-start gap-3">
+          <AlertTriangle className="w-5 h-5 text-amber-600 dark:text-amber-400 flex-shrink-0 mt-0.5" />
           <div>
-            <span className="font-bold block text-sm text-amber-100">Leap-Year Birthday (February 29)</span>
-            <p className="mt-0.5 leading-relaxed text-amber-200/90">
+            <span className="font-bold block text-sm text-amber-900 dark:text-amber-100">Leap-Year Birthday (February 29)</span>
+            <p className="mt-0.5 leading-relaxed text-amber-800 dark:text-amber-200/90">
               Because you were born on a leap day, in non-leap years your birthday is celebrated on{' '}
-              <strong className="text-amber-100">{leapRule === 'mar1' ? 'March 1' : 'February 28'}</strong> according to your active setting.
+              <strong className="text-amber-950 dark:text-amber-100">{leapRule === 'mar1' ? 'March 1' : 'February 28'}</strong> according to your active setting.
             </p>
             <div className="mt-2 flex items-center gap-3">
-              <span className="font-semibold text-[11px] text-zinc-300">Change Celebration Date:</span>
+              <span className="font-semibold text-[11px] text-slate-600 dark:text-zinc-300">Change Celebration Date:</span>
               <button
                 type="button"
                 onClick={() => onLeapRuleChange('feb28')}
                 className={`px-2.5 py-1 rounded text-xs font-medium border transition-colors ${
                   leapRule === 'feb28'
                     ? 'bg-amber-600 text-white border-amber-500'
-                    : 'bg-zinc-900 text-zinc-300 border-zinc-700 hover:bg-zinc-800'
+                    : 'bg-white text-slate-700 border-slate-300 hover:bg-slate-100 dark:bg-zinc-900 dark:text-zinc-300 dark:border-zinc-700 dark:hover:bg-zinc-800'
                 }`}
               >
                 Feb 28
@@ -226,7 +226,7 @@ export function BirthdayCountdown({ result, leapRule, onLeapRuleChange }: Birthd
                 className={`px-2.5 py-1 rounded text-xs font-medium border transition-colors ${
                   leapRule === 'mar1'
                     ? 'bg-amber-600 text-white border-amber-500'
-                    : 'bg-zinc-900 text-zinc-300 border-zinc-700 hover:bg-zinc-800'
+                    : 'bg-white text-slate-700 border-slate-300 hover:bg-slate-100 dark:bg-zinc-900 dark:text-zinc-300 dark:border-zinc-700 dark:hover:bg-zinc-800'
                 }`}
               >
                 March 1

@@ -35,26 +35,26 @@ export function DayOfBirthCard({ result }: DayOfBirthCardProps) {
   const halfBday = getHalfBirthday(result.birthParts.month, result.birthParts.day);
 
   return (
-    <div className="bg-[#18181b] rounded-2xl shadow-2xl border border-zinc-800/90 p-5 sm:p-8 max-w-4xl mx-auto mt-8 transition-all">
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-5 border-b border-zinc-800">
+    <div className="bg-white dark:bg-[#18181b] rounded-2xl shadow-xl shadow-slate-200/50 dark:shadow-2xl border border-slate-200/90 dark:border-zinc-800/90 p-5 sm:p-8 max-w-4xl mx-auto mt-8 transition-all">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-5 border-b border-slate-200 dark:border-zinc-800">
         <div>
-          <h2 className="text-xl sm:text-2xl font-bold text-white flex items-center gap-2">
-            <Star className="w-5 h-5 text-amber-400" />
+          <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
+            <Star className="w-5 h-5 text-amber-500 dark:text-amber-400" />
             Day of Birth & Fun Milestones
           </h2>
-          <p className="text-xs sm:text-sm text-zinc-400 mt-0.5">
+          <p className="text-xs sm:text-sm text-slate-500 dark:text-zinc-400 mt-0.5">
             Astrological, generational, and cultural trivia about your birth date
           </p>
         </div>
 
-        <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-zinc-900 border border-zinc-800 text-zinc-300 text-xs font-semibold self-start sm:self-auto">
-          <Calendar className="w-3.5 h-3.5 text-indigo-400" />
+        <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-100 dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 text-slate-700 dark:text-zinc-300 text-xs font-semibold self-start sm:self-auto">
+          <Calendar className="w-3.5 h-3.5 text-indigo-600 dark:text-indigo-400" />
           {MONTH_NAMES[result.birthParts.month - 1]} {result.birthParts.day}, {result.birthParts.year}
         </span>
       </div>
 
       {/* Main Headline for Day of Birth */}
-      <div className="mt-6 p-5 rounded-2xl bg-gradient-to-r from-zinc-900 via-slate-900 to-indigo-950/80 border border-zinc-800 text-white flex flex-col sm:flex-row sm:items-center justify-between gap-4 shadow-md">
+      <div className="mt-6 p-5 rounded-2xl bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 border border-slate-800 text-white flex flex-col sm:flex-row sm:items-center justify-between gap-4 shadow-md">
         <div>
           <span className="text-xs font-medium text-indigo-300 uppercase tracking-wider">
             Day of the Week You Entered the World
@@ -62,7 +62,7 @@ export function DayOfBirthCard({ result }: DayOfBirthCardProps) {
           <h3 className="text-2xl sm:text-3xl font-extrabold mt-1 text-white">
             You were born on a <span className="text-amber-400 underline">{result.dayOfWeekBorn}</span>
           </h3>
-          <p className="text-xs text-zinc-400 mt-1 max-w-md">
+          <p className="text-xs text-slate-300 dark:text-zinc-400 mt-1 max-w-md">
             {formatFullDate(result.birthDate)} was a {result.isBirthYearLeapYear ? 'leap year' : 'standard 365-day year'}.
           </p>
         </div>
@@ -76,26 +76,26 @@ export function DayOfBirthCard({ result }: DayOfBirthCardProps) {
       {/* Grid of facts */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-6">
         {/* Western Zodiac */}
-        <div className="p-4 rounded-xl bg-zinc-900/60 border border-zinc-800">
+        <div className="p-4 rounded-xl bg-slate-50 dark:bg-zinc-900/60 border border-slate-200 dark:border-zinc-800 shadow-xs">
           <div className="flex items-center justify-between mb-2">
-            <span className="text-xs font-bold text-zinc-400 uppercase tracking-wider">
+            <span className="text-xs font-bold text-slate-500 dark:text-zinc-400 uppercase tracking-wider">
               Western Zodiac
             </span>
             <span className="text-xl" title={zodiac.sign}>
               {zodiac.symbol}
             </span>
           </div>
-          <span className="block text-lg font-bold text-white">
+          <span className="block text-lg font-bold text-slate-900 dark:text-white">
             {zodiac.sign}
           </span>
-          <p className="text-xs text-zinc-400 mt-0.5">
-            Element: <strong className="text-zinc-200">{zodiac.element}</strong> ({zodiac.dateRange})
+          <p className="text-xs text-slate-600 dark:text-zinc-400 mt-0.5">
+            Element: <strong className="text-slate-900 dark:text-zinc-200">{zodiac.element}</strong> ({zodiac.dateRange})
           </p>
           <div className="mt-2 flex flex-wrap gap-1">
             {zodiac.traits.map((t) => (
               <span
                 key={t}
-                className="text-[10px] px-2 py-0.5 rounded bg-indigo-950/60 text-indigo-300 border border-indigo-800/60 font-medium"
+                className="text-[10px] px-2 py-0.5 rounded bg-indigo-50 text-indigo-700 border border-indigo-200 dark:bg-indigo-950/60 dark:text-indigo-300 dark:border-indigo-800/60 font-medium"
               >
                 {t}
               </span>
@@ -104,24 +104,24 @@ export function DayOfBirthCard({ result }: DayOfBirthCardProps) {
         </div>
 
         {/* Chinese Zodiac */}
-        <div className="p-4 rounded-xl bg-zinc-900/60 border border-zinc-800">
+        <div className="p-4 rounded-xl bg-slate-50 dark:bg-zinc-900/60 border border-slate-200 dark:border-zinc-800 shadow-xs">
           <div className="flex items-center justify-between mb-2">
-            <span className="text-xs font-bold text-zinc-400 uppercase tracking-wider">
+            <span className="text-xs font-bold text-slate-500 dark:text-zinc-400 uppercase tracking-wider">
               Chinese Zodiac
             </span>
             <span className="text-xl">{chineseZodiac.emoji}</span>
           </div>
-          <span className="block text-lg font-bold text-white">
+          <span className="block text-lg font-bold text-slate-900 dark:text-white">
             Year of the {chineseZodiac.animal}
           </span>
-          <p className="text-xs text-zinc-400 mt-0.5">
-            Element: <strong className="text-zinc-200">{chineseZodiac.element}</strong>
+          <p className="text-xs text-slate-600 dark:text-zinc-400 mt-0.5">
+            Element: <strong className="text-slate-900 dark:text-zinc-200">{chineseZodiac.element}</strong>
           </p>
           <div className="mt-2 flex flex-wrap gap-1">
             {chineseZodiac.traits.map((t) => (
               <span
                 key={t}
-                className="text-[10px] px-2 py-0.5 rounded bg-amber-950/60 text-amber-300 border border-amber-800/60 font-medium"
+                className="text-[10px] px-2 py-0.5 rounded bg-amber-50 text-amber-700 border border-amber-200 dark:bg-amber-950/60 dark:text-amber-300 dark:border-amber-800/60 font-medium"
               >
                 {t}
               </span>
@@ -130,69 +130,69 @@ export function DayOfBirthCard({ result }: DayOfBirthCardProps) {
         </div>
 
         {/* Birthstone & Flower */}
-        <div className="p-4 rounded-xl bg-zinc-900/60 border border-zinc-800">
+        <div className="p-4 rounded-xl bg-slate-50 dark:bg-zinc-900/60 border border-slate-200 dark:border-zinc-800 shadow-xs">
           <div className="flex items-center justify-between mb-2">
-            <span className="text-xs font-bold text-zinc-400 uppercase tracking-wider">
+            <span className="text-xs font-bold text-slate-500 dark:text-zinc-400 uppercase tracking-wider">
               Birthstone & Flower
             </span>
-            <Gem className="w-4 h-4 text-purple-400" />
+            <Gem className="w-4 h-4 text-purple-600 dark:text-purple-400" />
           </div>
           <div className="space-y-1.5 mt-1">
-            <div className="flex items-center gap-1.5 text-xs text-zinc-300">
-              <Gem className="w-3.5 h-3.5 text-indigo-400" />
-              <span>Stone: <strong className="text-white">{monthAttr.stone}</strong></span>
+            <div className="flex items-center gap-1.5 text-xs text-slate-700 dark:text-zinc-300">
+              <Gem className="w-3.5 h-3.5 text-indigo-600 dark:text-indigo-400" />
+              <span>Stone: <strong className="text-slate-900 dark:text-white">{monthAttr.stone}</strong></span>
             </div>
-            <div className="flex items-center gap-1.5 text-xs text-zinc-300">
-              <Flower2 className="w-3.5 h-3.5 text-rose-400" />
-              <span>Flower: <strong className="text-white">{monthAttr.flower}</strong></span>
+            <div className="flex items-center gap-1.5 text-xs text-slate-700 dark:text-zinc-300">
+              <Flower2 className="w-3.5 h-3.5 text-rose-600 dark:text-rose-400" />
+              <span>Flower: <strong className="text-slate-900 dark:text-white">{monthAttr.flower}</strong></span>
             </div>
           </div>
         </div>
 
         {/* Golden Birthday */}
-        <div className="p-4 rounded-xl bg-zinc-900/60 border border-zinc-800">
+        <div className="p-4 rounded-xl bg-slate-50 dark:bg-zinc-900/60 border border-slate-200 dark:border-zinc-800 shadow-xs">
           <div className="flex items-center justify-between mb-2">
-            <span className="text-xs font-bold text-zinc-400 uppercase tracking-wider">
+            <span className="text-xs font-bold text-slate-500 dark:text-zinc-400 uppercase tracking-wider">
               Golden Birthday
             </span>
-            <Award className="w-4 h-4 text-amber-400" />
+            <Award className="w-4 h-4 text-amber-600 dark:text-amber-400" />
           </div>
-          <span className="block text-base font-bold text-white">
+          <span className="block text-base font-bold text-slate-900 dark:text-white">
             Turning {goldenBday.age} in {goldenBday.year}
           </span>
-          <p className="text-xs text-zinc-400 mt-1">
+          <p className="text-xs text-slate-600 dark:text-zinc-400 mt-1">
             When you turn the age corresponding to your birth day number ({result.birthParts.day}th).
           </p>
         </div>
 
         {/* Half Birthday */}
-        <div className="p-4 rounded-xl bg-zinc-900/60 border border-zinc-800">
+        <div className="p-4 rounded-xl bg-slate-50 dark:bg-zinc-900/60 border border-slate-200 dark:border-zinc-800 shadow-xs">
           <div className="flex items-center justify-between mb-2">
-            <span className="text-xs font-bold text-zinc-400 uppercase tracking-wider">
+            <span className="text-xs font-bold text-slate-500 dark:text-zinc-400 uppercase tracking-wider">
               Half-Birthday
             </span>
-            <Sparkles className="w-4 h-4 text-cyan-400" />
+            <Sparkles className="w-4 h-4 text-cyan-600 dark:text-cyan-400" />
           </div>
-          <span className="block text-base font-bold text-white">
+          <span className="block text-base font-bold text-slate-900 dark:text-white">
             Every {halfBday.monthName} {halfBday.day}
           </span>
-          <p className="text-xs text-zinc-400 mt-1">
+          <p className="text-xs text-slate-600 dark:text-zinc-400 mt-1">
             Exactly 6 months after your birthday for mid-year celebration!
           </p>
         </div>
 
-        {/* Generation Persona */}
-        <div className="p-4 rounded-xl bg-zinc-900/60 border border-zinc-800">
+        {/* Generation Era */}
+        <div className="p-4 rounded-xl bg-slate-50 dark:bg-zinc-900/60 border border-slate-200 dark:border-zinc-800 shadow-xs">
           <div className="flex items-center justify-between mb-2">
-            <span className="text-xs font-bold text-zinc-400 uppercase tracking-wider">
+            <span className="text-xs font-bold text-slate-500 dark:text-zinc-400 uppercase tracking-wider">
               Generation Era
             </span>
-            <Users className="w-4 h-4 text-emerald-400" />
+            <Users className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
           </div>
-          <span className="block text-base font-bold text-white">
+          <span className="block text-base font-bold text-slate-900 dark:text-white">
             {gen.name} ({gen.period})
           </span>
-          <p className="text-xs text-zinc-400 mt-1">
+          <p className="text-xs text-slate-600 dark:text-zinc-400 mt-1">
             {gen.description}
           </p>
         </div>

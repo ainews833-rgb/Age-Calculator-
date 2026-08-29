@@ -36,7 +36,7 @@ export function Header({ onOpenHistory, onOpenPrint, onShare, historyCount }: He
   ];
 
   return (
-    <header className="sticky top-0 z-40 w-full border-b border-zinc-800/80 bg-[#09090b]/85 backdrop-blur-md transition-colors">
+    <header className="sticky top-0 z-40 w-full border-b border-slate-200/80 dark:border-zinc-800/80 bg-white/90 dark:bg-[#09090b]/85 backdrop-blur-md transition-colors">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
         {/* Brand Logo */}
         <a href="#calculator" className="flex items-center gap-2.5 group focus:outline-none focus:ring-2 focus:ring-indigo-500 rounded-lg p-1">
@@ -45,14 +45,14 @@ export function Header({ onOpenHistory, onOpenPrint, onShare, historyCount }: He
           </div>
           <div>
             <div className="flex items-center gap-1.5">
-              <span className="font-bold text-lg tracking-tight text-white">
-                Age Calculator <span className="text-indigo-400">Pro</span>
+              <span className="font-bold text-lg tracking-tight text-slate-900 dark:text-white">
+                Age Calculator <span className="text-indigo-600 dark:text-indigo-400">Pro</span>
               </span>
-              <span className="text-[10px] uppercase font-semibold px-1.5 py-0.5 rounded bg-zinc-800 text-zinc-300 border border-zinc-700">
+              <span className="text-[10px] uppercase font-semibold px-1.5 py-0.5 rounded bg-slate-100 dark:bg-zinc-800 text-slate-700 dark:text-zinc-300 border border-slate-200 dark:border-zinc-700">
                 v2.5
               </span>
             </div>
-            <p className="text-xs text-zinc-400 hidden sm:block">
+            <p className="text-xs text-slate-500 dark:text-zinc-400 hidden sm:block">
               Calculate your exact age instantly
             </p>
           </div>
@@ -64,7 +64,7 @@ export function Header({ onOpenHistory, onOpenPrint, onShare, historyCount }: He
             <a
               key={link.name}
               href={link.href}
-              className="px-3 py-1.5 text-sm font-medium text-zinc-400 hover:text-white hover:bg-zinc-800/60 rounded-lg transition-colors"
+              className="px-3 py-1.5 text-sm font-medium text-slate-600 dark:text-zinc-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-zinc-800/60 rounded-lg transition-colors"
             >
               {link.name}
             </a>
@@ -76,7 +76,7 @@ export function Header({ onOpenHistory, onOpenPrint, onShare, historyCount }: He
           {/* History Button */}
           <button
             onClick={onOpenHistory}
-            className="relative p-2 text-zinc-400 hover:text-white hover:bg-zinc-800/80 rounded-lg transition-colors"
+            className="relative p-2 text-slate-600 dark:text-zinc-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-zinc-800/80 rounded-lg transition-colors"
             title="Recent Calculations History"
             aria-label="View calculation history"
           >
@@ -91,7 +91,7 @@ export function Header({ onOpenHistory, onOpenPrint, onShare, historyCount }: He
           {/* Print Button */}
           <button
             onClick={onOpenPrint}
-            className="p-2 text-zinc-400 hover:text-white hover:bg-zinc-800/80 rounded-lg transition-colors hidden sm:flex"
+            className="p-2 text-slate-600 dark:text-zinc-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-zinc-800/80 rounded-lg transition-colors hidden sm:flex"
             title="Print or Save Report"
             aria-label="Print or save age report"
           >
@@ -101,7 +101,7 @@ export function Header({ onOpenHistory, onOpenPrint, onShare, historyCount }: He
           {/* Share Button */}
           <button
             onClick={onShare}
-            className="p-2 text-zinc-400 hover:text-white hover:bg-zinc-800/80 rounded-lg transition-colors"
+            className="p-2 text-slate-600 dark:text-zinc-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-zinc-800/80 rounded-lg transition-colors"
             title="Share Result"
             aria-label="Share calculated age"
           >
@@ -111,21 +111,21 @@ export function Header({ onOpenHistory, onOpenPrint, onShare, historyCount }: He
           {/* Theme Toggle */}
           <button
             onClick={toggleTheme}
-            className="theme-toggle p-2 text-zinc-400 hover:text-white hover:bg-zinc-800/80 rounded-lg transition-colors"
+            className="theme-toggle p-2 text-slate-600 dark:text-zinc-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-zinc-800/80 rounded-lg transition-colors"
             title={`Switch to ${resolvedTheme === 'dark' ? 'Light' : 'Dark'} mode`}
             aria-label="Toggle dark and light theme"
           >
             {resolvedTheme === 'dark' ? (
               <Sun className="w-5 h-5 text-amber-400" />
             ) : (
-              <Moon className="w-5 h-5 text-zinc-400" />
+              <Moon className="w-5 h-5 text-slate-700" />
             )}
           </button>
 
           {/* Mobile Hamburger Toggle */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden p-2 text-zinc-400 hover:bg-zinc-800 rounded-lg transition-colors"
+            className="md:hidden p-2 text-slate-600 dark:text-zinc-400 hover:bg-slate-100 dark:hover:bg-zinc-800 rounded-lg transition-colors"
             aria-label="Toggle mobile menu"
           >
             {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -135,18 +135,18 @@ export function Header({ onOpenHistory, onOpenPrint, onShare, historyCount }: He
 
       {/* Mobile Drawer Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden border-t border-zinc-800 bg-[#09090b] px-4 py-3 space-y-1">
+        <div className="md:hidden border-t border-slate-200 dark:border-zinc-800 bg-white dark:bg-[#09090b] px-4 py-3 space-y-1 shadow-lg">
           {navLinks.map((link) => (
             <a
               key={link.name}
               href={link.href}
               onClick={() => setMobileMenuOpen(false)}
-              className="block px-3 py-2 text-base font-medium text-zinc-300 hover:text-white hover:bg-zinc-800/80 rounded-lg transition-colors"
+              className="block px-3 py-2 text-base font-medium text-slate-700 dark:text-zinc-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-zinc-800/80 rounded-lg transition-colors"
             >
               {link.name}
             </a>
           ))}
-          <div className="pt-2 border-t border-zinc-800/80 flex items-center justify-between text-xs text-zinc-500 px-3">
+          <div className="pt-2 border-t border-slate-200 dark:border-zinc-800/80 flex items-center justify-between text-xs text-slate-500 dark:text-zinc-500 px-3">
             <span className="flex items-center gap-1">
               <ShieldCheck className="w-3.5 h-3.5 text-emerald-500" /> 100% Private Client-Side
             </span>

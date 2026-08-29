@@ -56,14 +56,14 @@ export function FaqContent() {
   };
 
   return (
-    <section id="faq" className="bg-[#18181b] rounded-2xl shadow-2xl border border-zinc-800/90 p-5 sm:p-8 max-w-4xl mx-auto mt-8 transition-all">
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-5 border-b border-zinc-800">
+    <section id="faq" className="bg-white dark:bg-[#18181b] rounded-2xl shadow-xl shadow-slate-200/50 dark:shadow-2xl border border-slate-200/90 dark:border-zinc-800/90 p-5 sm:p-8 max-w-4xl mx-auto mt-8 transition-all">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-5 border-b border-slate-200 dark:border-zinc-800">
         <div>
-          <h2 className="text-xl sm:text-2xl font-bold text-white flex items-center gap-2">
-            <HelpCircle className="w-5 h-5 text-indigo-400" />
+          <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
+            <HelpCircle className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
             Frequently Asked Questions & Methodology
           </h2>
-          <p className="text-xs sm:text-sm text-zinc-400 mt-0.5">
+          <p className="text-xs sm:text-sm text-slate-500 dark:text-zinc-400 mt-0.5">
             Everything you need to know about precision calendar age arithmetic
           </p>
         </div>
@@ -76,29 +76,29 @@ export function FaqContent() {
           return (
             <div
               key={faq.question}
-              className="rounded-xl border border-zinc-800 bg-zinc-900/60 overflow-hidden transition-colors"
+              className="rounded-xl border border-slate-200 dark:border-zinc-800 bg-slate-50 dark:bg-zinc-900/60 overflow-hidden transition-colors shadow-xs"
             >
               <button
                 type="button"
                 onClick={() => toggle(idx)}
                 aria-expanded={isOpen}
-                className="w-full text-left p-4 sm:p-5 flex items-center justify-between gap-4 font-semibold text-white hover:text-indigo-400 transition-colors"
+                className="w-full text-left p-4 sm:p-5 flex items-center justify-between gap-4 font-semibold text-slate-900 dark:text-white hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
               >
                 <div className="flex items-center gap-2.5">
-                  <span className="text-[11px] font-bold px-2 py-0.5 rounded bg-indigo-950/80 text-indigo-300 border border-indigo-800 hidden sm:inline-block">
+                  <span className="text-[11px] font-bold px-2 py-0.5 rounded bg-indigo-50 text-indigo-700 border border-indigo-200 dark:bg-indigo-950/80 dark:text-indigo-300 dark:border-indigo-800 hidden sm:inline-block">
                     {faq.tag}
                   </span>
                   <span className="text-sm sm:text-base font-bold">{faq.question}</span>
                 </div>
                 {isOpen ? (
-                  <ChevronUp className="w-4 h-4 text-indigo-400 flex-shrink-0" />
+                  <ChevronUp className="w-4 h-4 text-indigo-600 dark:text-indigo-400 flex-shrink-0" />
                 ) : (
-                  <ChevronDown className="w-4 h-4 text-zinc-400 flex-shrink-0" />
+                  <ChevronDown className="w-4 h-4 text-slate-400 dark:text-zinc-400 flex-shrink-0" />
                 )}
               </button>
 
               {isOpen && (
-                <div className="px-4 pb-4 sm:px-5 sm:pb-5 pt-0 text-xs sm:text-sm text-zinc-300 leading-relaxed border-t border-zinc-800 mt-1 animate-fadeIn">
+                <div className="px-4 pb-4 sm:px-5 sm:pb-5 pt-0 text-xs sm:text-sm text-slate-600 dark:text-zinc-300 leading-relaxed border-t border-slate-200 dark:border-zinc-800 mt-1 animate-fadeIn">
                   {faq.answer}
                 </div>
               )}
@@ -108,12 +108,12 @@ export function FaqContent() {
       </div>
 
       {/* Educational Article Box */}
-      <div className="mt-8 p-5 sm:p-6 rounded-2xl bg-indigo-950/30 border border-indigo-900/60">
-        <h3 className="text-base font-bold text-white flex items-center gap-2">
-          <Cpu className="w-4 h-4 text-indigo-400" />
+      <div className="mt-8 p-5 sm:p-6 rounded-2xl bg-indigo-50/80 dark:bg-indigo-950/30 border border-indigo-200 dark:border-indigo-900/60">
+        <h3 className="text-base font-bold text-slate-900 dark:text-white flex items-center gap-2">
+          <Cpu className="w-4 h-4 text-indigo-600 dark:text-indigo-400" />
           The Science of Gregorian Age Calculation
         </h3>
-        <p className="mt-2 text-xs sm:text-sm text-zinc-300 leading-relaxed">
+        <p className="mt-2 text-xs sm:text-sm text-slate-700 dark:text-zinc-300 leading-relaxed">
           The Gregorian calendar was introduced in 1582 to correct the Julian calendar&apos;s drift against solar equinoxes. Because months vary from 28 to 31 days and leap years occur every 4 years (with 100-year and 400-year exceptions), chronological age calculation requires bidirectional month and year borrowing. Age Calculator Pro executes exact calendar arithmetic to guarantee that your age in years, months, and days is mathematically sound for legal, civil, medical, and personal applications.
         </p>
       </div>

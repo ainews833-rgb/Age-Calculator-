@@ -61,34 +61,34 @@ export function ShareModal({ isOpen, onClose, result }: ShareModalProps) {
     <div
       role="dialog"
       aria-modal="true"
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/75 backdrop-blur-xs animate-fadeIn"
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 dark:bg-black/75 backdrop-blur-xs animate-fadeIn"
       onClick={onClose}
     >
       <div
-        className="bg-[#18181b] border border-zinc-800 rounded-2xl p-6 sm:p-7 max-w-md w-full shadow-2xl relative"
+        className="bg-white dark:bg-[#18181b] border border-slate-200 dark:border-zinc-800 rounded-2xl p-6 sm:p-7 max-w-md w-full shadow-2xl relative"
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="flex items-center justify-between pb-4 border-b border-zinc-800">
+        <div className="flex items-center justify-between pb-4 border-b border-slate-200 dark:border-zinc-800">
           <div className="flex items-center gap-2">
-            <Share2 className="w-5 h-5 text-indigo-400" />
-            <h3 className="font-bold text-lg text-white">
+            <Share2 className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
+            <h3 className="font-bold text-lg text-slate-900 dark:text-white">
               Share Age Result
             </h3>
           </div>
           <button
             onClick={onClose}
-            className="p-1 rounded-lg text-zinc-400 hover:text-white"
+            className="p-1 rounded-lg text-slate-400 dark:text-zinc-400 hover:text-slate-700 dark:hover:text-white"
           >
             <X className="w-5 h-5" />
           </button>
         </div>
 
         {/* Result summary card */}
-        <div className="mt-4 p-4 rounded-xl bg-zinc-900/80 border border-zinc-800 text-center">
-          <span className="block text-2xl font-black text-indigo-400">
+        <div className="mt-4 p-4 rounded-xl bg-slate-50 dark:bg-zinc-900/80 border border-slate-200 dark:border-zinc-800 text-center">
+          <span className="block text-2xl font-black text-indigo-600 dark:text-indigo-400">
             {result.years}y {result.months}m {result.days}d
           </span>
-          <p className="text-xs text-zinc-400 mt-1">
+          <p className="text-xs text-slate-600 dark:text-zinc-400 mt-1">
             {formatNumber(result.totalDays)} total days lived
           </p>
         </div>
@@ -99,9 +99,9 @@ export function ShareModal({ isOpen, onClose, result }: ShareModalProps) {
             href={whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex flex-col items-center justify-center p-3 rounded-xl bg-emerald-950/40 text-emerald-300 border border-emerald-900/60 text-xs font-semibold hover:scale-105 transition-transform"
+            className="flex flex-col items-center justify-center p-3 rounded-xl bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-900/60 text-xs font-semibold hover:scale-105 transition-transform shadow-xs"
           >
-            <MessageCircle className="w-5 h-5 mb-1 text-emerald-400" />
+            <MessageCircle className="w-5 h-5 mb-1 text-emerald-600 dark:text-emerald-400" />
             WhatsApp
           </a>
 
@@ -109,17 +109,17 @@ export function ShareModal({ isOpen, onClose, result }: ShareModalProps) {
             href={twitterUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex flex-col items-center justify-center p-3 rounded-xl bg-sky-950/40 text-sky-300 border border-sky-900/60 text-xs font-semibold hover:scale-105 transition-transform"
+            className="flex flex-col items-center justify-center p-3 rounded-xl bg-sky-50 dark:bg-sky-950/40 text-sky-700 dark:text-sky-300 border border-sky-200 dark:border-sky-900/60 text-xs font-semibold hover:scale-105 transition-transform shadow-xs"
           >
-            <Send className="w-5 h-5 mb-1 text-sky-400" />
+            <Send className="w-5 h-5 mb-1 text-sky-600 dark:text-sky-400" />
             X / Twitter
           </a>
 
           <a
             href={emailUrl}
-            className="flex flex-col items-center justify-center p-3 rounded-xl bg-indigo-950/40 text-indigo-300 border border-indigo-900/60 text-xs font-semibold hover:scale-105 transition-transform"
+            className="flex flex-col items-center justify-center p-3 rounded-xl bg-indigo-50 dark:bg-indigo-950/40 text-indigo-700 dark:text-indigo-300 border border-indigo-200 dark:border-indigo-900/60 text-xs font-semibold hover:scale-105 transition-transform shadow-xs"
           >
-            <Mail className="w-5 h-5 mb-1 text-indigo-400" />
+            <Mail className="w-5 h-5 mb-1 text-indigo-600 dark:text-indigo-400" />
             Email
           </a>
         </div>
@@ -128,9 +128,9 @@ export function ShareModal({ isOpen, onClose, result }: ShareModalProps) {
         <div className="mt-5 space-y-2.5">
           <button
             onClick={handleCopyText}
-            className="w-full h-10 px-4 rounded-xl border border-zinc-700 bg-zinc-900 text-zinc-200 text-xs font-bold flex items-center justify-center gap-2 hover:bg-zinc-800 transition-colors"
+            className="w-full h-10 px-4 rounded-xl border border-slate-300 dark:border-zinc-700 bg-slate-100 dark:bg-zinc-900 text-slate-800 dark:text-zinc-200 text-xs font-bold flex items-center justify-center gap-2 hover:bg-slate-200 dark:hover:bg-zinc-800 transition-colors"
           >
-            {copiedText ? <Check className="w-4 h-4 text-emerald-400" /> : <Copy className="w-4 h-4" />}
+            {copiedText ? <Check className="w-4 h-4 text-emerald-600 dark:text-emerald-400" /> : <Copy className="w-4 h-4" />}
             {copiedText ? 'Summary Copied to Clipboard!' : 'Copy Summary Text'}
           </button>
 
