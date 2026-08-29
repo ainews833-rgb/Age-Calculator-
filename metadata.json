@@ -1,0 +1,6 @@
+{
+  "name": "Age Calculator Pro",
+  "description": "Calculate your exact age in years, months, days and more. Find your next birthday, date difference, age milestones and detailed age statistics with our free age calculator.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
